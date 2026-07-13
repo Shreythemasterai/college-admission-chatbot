@@ -3,12 +3,13 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 
-loader = PyPDFLoader("data/assets/admission_brochure.pdf")
+loader = PyPDFLoader("data/assets/pdf_of_knowledge.pdf")
 documents = loader.load()
 
 splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000,
-    chunk_overlap=200
+    chunk_size=1500,
+    chunk_overlap=300,
+    separators=["\n\n", "\n", ".", " ",""]
 )
 
 docs = splitter.split_documents(documents)
