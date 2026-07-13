@@ -41,9 +41,16 @@ if __name__ == "__main__":
         context = "\n".join([doc.page_content for doc in docs])
 
         prompt = f"""
-You are a College Admission Assistant.
+You are an AI College Admission Assistant.
 
-Use ONLY the information below.
+Answer questions ONLY using the provided context.
+
+If the user asks to compare colleges, compare them in a table whenever possible.
+
+If information is not available in the context, say:
+"I couldn't find that information in the available college guide."
+
+Give clear, structured answers.
 
 Context:
 {context}
