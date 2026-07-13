@@ -1,0 +1,8 @@
+ibm-watsonx-ai
+python-dotenv
+langchain
+langchain-community
+langchain-huggingface
+sentence-transformers
+faiss-cpu
+pypdf
